@@ -82,12 +82,21 @@
                                                                 <action selector="btnFav:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZeX-PD-ht1"/>
                                                             </connections>
                                                         </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iXA-m6-eUe">
+                                                            <rect key="frame" x="115" y="70" width="29" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="25" id="3wa-MW-kCS"/>
+                                                                <constraint firstAttribute="width" constant="29" id="ygu-eS-O8m"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="rxT-Ud-xky" firstAttribute="centerY" secondItem="xXA-3b-ltH" secondAttribute="centerY" id="1s0-SR-eGG"/>
                                                         <constraint firstItem="5hG-Iz-nUV" firstAttribute="top" secondItem="rxT-Ud-xky" secondAttribute="top" id="2fk-cS-5Dc"/>
                                                         <constraint firstItem="0as-47-14w" firstAttribute="top" secondItem="PcH-bx-SDl" secondAttribute="top" id="5aJ-cU-WK1"/>
+                                                        <constraint firstItem="iXA-m6-eUe" firstAttribute="top" secondItem="Yhj-Eb-hE5" secondAttribute="bottom" constant="7.6666666666666643" id="5uo-Yb-ajQ"/>
+                                                        <constraint firstItem="iXA-m6-eUe" firstAttribute="leading" secondItem="rxT-Ud-xky" secondAttribute="trailing" constant="15" id="A31-7C-hp1"/>
                                                         <constraint firstItem="Yhj-Eb-hE5" firstAttribute="leading" secondItem="5hG-Iz-nUV" secondAttribute="leading" id="COA-0S-3kE"/>
                                                         <constraint firstItem="xIm-nV-4JB" firstAttribute="top" secondItem="PcH-bx-SDl" secondAttribute="bottom" constant="20" id="Dha-1D-EPX"/>
                                                         <constraint firstItem="5hG-Iz-nUV" firstAttribute="leading" secondItem="rxT-Ud-xky" secondAttribute="trailing" constant="15" id="EEg-jj-R4P"/>
@@ -122,6 +131,7 @@
                                         <connections>
                                             <outlet property="btnstar" destination="0as-47-14w" id="7O1-9I-tXB"/>
                                             <outlet property="imgprofile" destination="rxT-Ud-xky" id="TzB-Ms-eyR"/>
+                                            <outlet property="imgsigT" destination="iXA-m6-eUe" id="oQ3-rc-RbZ"/>
                                             <outlet property="imgstar" destination="PcH-bx-SDl" id="3Jd-9x-bWf"/>
                                             <outlet property="lblEmail" destination="Yhj-Eb-hE5" id="4eT-Qz-rQ6"/>
                                             <outlet property="lblName" destination="5hG-Iz-nUV" id="kpW-tW-zt2"/>

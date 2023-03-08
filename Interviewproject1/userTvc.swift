@@ -14,6 +14,8 @@ class userTvc: UITableViewCell {
     @IBOutlet var lblEmail: UILabel!
     @IBOutlet var btnstar: UIButton!
     @IBOutlet var imgstar: UIImageView!
+    
+    @IBOutlet var imgsigT: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -14,6 +14,7 @@ class ViewController: UIViewController{
     var like = [Int]()
     var dc = Model()
     var img = NSData()
+    var imgsign = NSData()
     var imgdata = [UIImage]() {
         didSet {
             print("imgdata \(imgdata.count)")
@@ -95,12 +96,16 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource  {
         cell.btnstar.tag = indexPath.row
         
        // image display as binary data
-        img = ((dc.fetchdata[indexPath.row].image as? NSData)!)
-//        imgdata.append(UIImage(data: img as! Data )!)
-        cell.imgprofile.image = UIImage(data: img as! Data )!
         
-        let sign = dc.fetchdata[indexPath.row].imagesign as? NSData
-        imgdata2.append(UIImage(data: sign as! Data )!)
+        img = ((dc.fetchdata[indexPath.row].image as? NSData)!)
+        cell.imgprofile.image = UIImage(data: img as! Data )!
+//        imgdata.append(UIImage(data: img as! Data )!)
+       
+        
+        imgsign = ((dc.fetchdata[indexPath.row].imagesign as? NSData)!)
+        cell.imgsigT.image = UIImage(data: imgsign as! Data )!
+        
+//        imgdata2.append(UIImage(data: sign as! Data )!)
         
         // LIKE CONTAINS IMAGES
         if !like.contains(indexPath.row){
@@ -136,7 +141,7 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource  {
         preview.email = dc.fetchdata[indexPath.row].email!
         preview.phone = Int(Double(dc.fetchdata[indexPath.row].phone))
         preview.imgPROFILE = UIImage(data: img as! Data )!
-        preview.signpic = imgdata2[indexPath.row]
+        preview.signpic = UIImage(data: imgsign as! Data )!
         
         self.navigationController?.pushViewController(preview, animated: true)
         
@@ -157,8 +162,8 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource  {
 //            self.dc.fetchdata.remove(at: indexPath.row)               // data delete from tbl rows
 //            self.tbl.deleteRows(at: [indexPath], with: .automatic)    // data delete from tbl rows
             dc.context.delete(dc.fetchdata[indexPath.row])              // data delete from coredata
-            imgdata.remove(at:indexPath.row)                           // data delete from coredata (images)
-            imgdata2.remove(at: indexPath.row)
+//            imgdata.remove(at:indexPath.row)                           // data delete from coredata (images)
+//            imgdata2.remove(at: indexPath.row)
             try dc.context.save()
         }catch{
             
